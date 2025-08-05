@@ -24,23 +24,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Gerenciar dropdowns em dispositivos móveis
     dropdownItems.forEach(item => {
-        const link = item.querySelector('a');
+        const trigger = item.querySelector('.dropdown-trigger');
         const dropdown = item.querySelector('.dropdown');
 
         // Em dispositivos móveis, o primeiro clique abre o dropdown
-        link.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                item.classList.toggle('active');
-                
-                // Fechar outros dropdowns abertos
-                dropdownItems.forEach(otherItem => {
-                    if (otherItem !== item && otherItem.classList.contains('active')) {
-                        otherItem.classList.remove('active');
-                    }
-                });
-            }
-        });
+        if (trigger) {
+            trigger.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    item.classList.toggle('active');
+                    
+                    // Fechar outros dropdowns abertos
+                    dropdownItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        }
     });
 
     // Fecha o menu ao clicar fora dele
@@ -209,4 +211,37 @@ document.addEventListener('DOMContentLoaded', function() {
         // Verificar elementos visíveis ao rolar a página
         window.addEventListener('scroll', checkIfInView);
     }
+
+    // Marcar menu principal como ativo quando estamos em uma subpágina
+    function setActiveParentMenu() {
+        const currentPage = window.location.pathname.split('/').pop();
+        
+        // Definir mapeamento de subpáginas para menus principais
+        const pageMapping = {
+            'inicie-seu-tratamento.html': 'tratamentos',
+            'curativos.html': 'tratamentos',
+            'livros.html': 'dicas-culturais',
+            'videos.html': 'dicas-culturais'
+        };
+        
+        // Verificar se a página atual é uma subpágina
+        if (pageMapping[currentPage]) {
+            const parentMenu = pageMapping[currentPage];
+            
+            // Encontrar e marcar o dropdown-trigger correspondente como ativo
+            const dropdownItems = document.querySelectorAll('.has-dropdown');
+            dropdownItems.forEach(item => {
+                const trigger = item.querySelector('.dropdown-trigger');
+                if (trigger) {
+                    const triggerText = trigger.textContent.toLowerCase().replace(/\s+/g, '-');
+                    if (triggerText === parentMenu) {
+                        trigger.classList.add('active');
+                    }
+                }
+            });
+        }
+    }
+    
+    // Executar quando a página carregar
+     setActiveParentMenu();
 });
