@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda | Arcas</title>
+    <link rel="icon" type="image/png" href="img/arcas-img/favicon-arcasramatis-scaled-84-84.png">
+    <link rel="shortcut icon" type="image/png" href="img/arcas-img/favicon-arcasramatis-scaled-84-84.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <a href="https://maps.app.goo.gl/iCPpnTpccufQiimc9" target="_blank">
+                <i class="fas fa-map-marker-alt"></i> Rua Luís Góis, 243 - Mirandópolis - São Paulo - SP - 04043-250
+            </a>
+        </div>
+    </div>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/arcas-img/icon-arcasramatis-scaled.png" alt="Logo Arcas Ramatis">
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <div class="hamburger"></div>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">INÍCIO</a></li>
+                    <li class="has-dropdown">
+                        <span class="dropdown-trigger">TRATAMENTOS</span>
+                        <ul class="dropdown">
+                            <li><a href="inicie-seu-tratamento.html">INICIE SEU TRATAMENTO</a></li>
+                            <li><a href="curativos.html">CURATIVOS</a></li>
+                            <li><a href="perguntas-frequentes.html">PERGUNTAS FREQUENTES</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="agenda.html">AGENDA</a></li>
+                    <li><a href="ensino.html">ENSINO</a></li>
+                    <li><a href="acoes-sociais.html">AÇÕES SOCIAIS</a></li>
+                    <li><a href="social-arcas.html">SOCIAL ARCAS</a></li>
+                    <li class="has-dropdown">
+                        <span class="dropdown-trigger">DICAS CULTURAIS</span>
+                        <ul class="dropdown">
+                            <li><a href="livros.html">LIVROS</a></li>
+                            <li><a href="videos.html">VÍDEOS</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="sobre.html">SOBRE</a></li>
+                    <li><a href="voce-pode-doar.html">VOCÊ PODE DOAR</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="agenda-section">
+            <div class="container">
+                <div class="intro-text">
+                    <h2>Programação Semanal</h2>
+                    <p>Confira abaixo nossa programação semanal de atividades. Clique nos dias da semana para visualizar as atividades disponíveis em cada dia.</p>
+                    <p>Para mais informações sobre qualquer atividade, entre em contato conosco através dos canais disponíveis no rodapé desta página.</p>
+                </div>
+
+                <div class="agenda-tabs">
+                    <div class="tabs-container">
+                        <button class="tab-btn active" data-day="domingo">Domingo</button>
+                        <button class="tab-btn" data-day="segunda">Segunda-feira</button>
+                        <button class="tab-btn" data-day="terca">Terça-feira</button>
+                        <button class="tab-btn" data-day="quarta">Quarta-feira</button>
+                        <button class="tab-btn" data-day="quinta">Quinta-feira</button>
+                        <button class="tab-btn" data-day="sexta">Sexta-feira</button>
+                        <button class="tab-btn" data-day="sabado">Sábado</button>
+                    </div>
+
+                    <div class="tab-content active" id="domingo">
+                        <h3>Domingo</h3>
+                        <div class="activities-container">
+                            <div class="activity-card">
+                                <div class="activity-time">9:00 - 10:30</div>
+                                <div class="activity-details">
+                                    <h4>Palestra Pública</h4>
+                                    <p>Palestra sobre temas espíritas e universais, aberta ao público em geral.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Salão Principal</span>
+                                        <span><i class="fas fa-user"></i> Palestrante convidado</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-time">10:45 - 12:00</div>
+                                <div class="activity-details">
+                                    <h4>Passes Energéticos</h4>
+                                    <p>Atendimento com passes energéticos para harmonização e equilíbrio.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Sala de Passes</span>
+                                        <span><i class="fas fa-info-circle"></i> Não é necessário agendamento prévio</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-time">15:00 - 17:00</div>
+                                <div class="activity-details">
+                                    <h4>Evangelização Infantil</h4>
+                                    <p>Atividades educativas e recreativas para crianças, com ensinamentos espíritas adaptados para cada faixa etária.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Sala de Evangelização</span>
+                                        <span><i class="fas fa-child"></i> Crianças de 3 a 12 anos</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="segunda">
+                        <h3>Segunda-feira</h3>
+                        <div class="activities-container">
+                            <div class="activity-card">
+                                <div class="activity-time">14:00 - 16:00</div>
+                                <div class="activity-details">
+                                    <h4>Atendimento Fraterno</h4>
+                                    <p>Atendimento individual para acolhimento, orientação e esclarecimento de dúvidas.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Salas de Atendimento</span>
+                                        <span><i class="fas fa-info-circle"></i> Necessário agendamento prévio</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-time">19:00 - 21:00</div>
+                                <div class="activity-details">
+                                    <h4>Curso: Espiritismo para Iniciantes</h4>
+                                    <p>Estudo introdutório sobre os princípios básicos da Doutrina Espírita.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Sala de Estudos 1</span>
+                                        <span><i class="fas fa-calendar-alt"></i> Inscrições abertas</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="terca">
+                        <h3>Terça-feira</h3>
+                        <div class="activities-container">
+                            <div class="activity-card">
+                                <div class="activity-time">9:00 - 11:00</div>
+                                <div class="activity-details">
+                                    <h4>Tratamento de Apometria</h4>
+                                    <p>Tratamento energético utilizando técnicas de Apometria para harmonização e equilíbrio.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Sala de Tratamentos</span>
+                                        <span><i class="fas fa-info-circle"></i> Necessário agendamento prévio</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-time">14:00 - 16:00</div>
+                                <div class="activity-details">
+                                    <h4>Oficina de Artesanato</h4>
+                                    <p>Atividade de artesanato para confecção de itens para bazares beneficentes.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Sala de Atividades</span>
+                                        <span><i class="fas fa-users"></i> Aberto a voluntários</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-time">19:30 - 21:30</div>
+                                <div class="activity-details">
+                                    <h4>Reunião de Desobsessão</h4>
+                                    <p>Trabalho mediúnico de desobsessão e auxílio espiritual.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Sala Mediúnica</span>
+                                        <span><i class="fas fa-lock"></i> Atividade privada para trabalhadores</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="quarta">
+                        <h3>Quarta-feira</h3>
+                        <div class="activities-container">
+                            <div class="activity-card">
+                                <div class="activity-time">10:00 - 12:00</div>
+                                <div class="activity-details">
+                                    <h4>Fluidoterapia</h4>
+                                    <p>Tratamento com água fluidificada e passes energéticos.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Sala de Passes</span>
+                                        <span><i class="fas fa-info-circle"></i> Trazer garrafa de água mineral</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-time">19:00 - 20:30</div>
+                                <div class="activity-details">
+                                    <h4>Estudo do Evangelho</h4>
+                                    <p>Estudo do Evangelho Segundo o Espiritismo, com reflexões e aplicações práticas.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Salão Principal</span>
+                                        <span><i class="fas fa-book-open"></i> Aberto ao público</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-time">20:45 - 21:30</div>
+                                <div class="activity-details">
+                                    <h4>Passes Energéticos</h4>
+                                    <p>Atendimento com passes energéticos para harmonização e equilíbrio.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Sala de Passes</span>
+                                        <span><i class="fas fa-info-circle"></i> Não é necessário agendamento prévio</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="quinta">
+                        <h3>Quinta-feira</h3>
+                        <div class="activities-container">
+                            <div class="activity-card">
+                                <div class="activity-time">14:00 - 16:00</div>
+                                <div class="activity-details">
+                                    <h4>Atendimento Fraterno</h4>
+                                    <p>Atendimento individual para acolhimento, orientação e esclarecimento de dúvidas.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Salas de Atendimento</span>
+                                        <span><i class="fas fa-info-circle"></i> Necessário agendamento prévio</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-time">19:00 - 21:00</div>
+                                <div class="activity-details">
+                                    <h4>Curso: Estudos Mediúnicos</h4>
+                                    <p>Estudo teórico e prático sobre mediunidade, baseado nas obras de Allan Kardec e outros autores espíritas.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Sala de Estudos 2</span>
+                                        <span><i class="fas fa-calendar-alt"></i> Inscrições abertas</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="sexta">
+                        <h3>Sexta-feira</h3>
+                        <div class="activities-container">
+                            <div class="activity-card">
+                                <div class="activity-time">9:00 - 11:00</div>
+                                <div class="activity-details">
+                                    <h4>Tratamento de Apometria</h4>
+                                    <p>Tratamento energético utilizando técnicas de Apometria para harmonização e equilíbrio.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Sala de Tratamentos</span>
+                                        <span><i class="fas fa-info-circle"></i> Necessário agendamento prévio</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-time">19:30 - 21:00</div>
+                                <div class="activity-details">
+                                    <h4>Palestra Pública</h4>
+                                    <p>Palestra sobre temas espíritas e universais, aberta ao público em geral.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Salão Principal</span>
+                                        <span><i class="fas fa-user"></i> Palestrante convidado</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-time">21:15 - 22:00</div>
+                                <div class="activity-details">
+                                    <h4>Passes Energéticos</h4>
+                                    <p>Atendimento com passes energéticos para harmonização e equilíbrio.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Sala de Passes</span>
+                                        <span><i class="fas fa-info-circle"></i> Não é necessário agendamento prévio</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="sabado">
+                        <h3>Sábado</h3>
+                        <div class="activities-container">
+                            <div class="activity-card">
+                                <div class="activity-time">9:00 - 12:00</div>
+                                <div class="activity-details">
+                                    <h4>Curso: Apometria</h4>
+                                    <p>Estudo teórico e prático sobre Apometria, técnicas e aplicações.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Sala de Estudos 3</span>
+                                        <span><i class="fas fa-calendar-alt"></i> Inscrições abertas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-time">14:00 - 16:00</div>
+                                <div class="activity-details">
+                                    <h4>Ação Social</h4>
+                                    <p>Distribuição de cestas básicas, roupas e outros itens para famílias cadastradas.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Área de Serviço Social</span>
+                                        <span><i class="fas fa-hands-helping"></i> Voluntários são bem-vindos</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-time">16:30 - 18:00</div>
+                                <div class="activity-details">
+                                    <h4>Evangelização Infantil</h4>
+                                    <p>Atividades educativas e recreativas para crianças de 4 a 12 anos baseadas nos ensinamentos cristãos.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Sala Infantil</span>
+                                        <span><i class="fas fa-child"></i> Crianças de 4 a 12 anos</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-time">18:30 - 19:30</div>
+                                <div class="activity-details">
+                                    <h4>Atendimento Fraterno</h4>
+                                    <p>Conversa fraterna e orientação espiritual para pessoas que buscam apoio e conforto.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Sala de Atendimento</span>
+                                        <span><i class="fas fa-heart"></i> Atendimento individual</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <div class="activity-time">19:00 - 21:00</div>
+                                <div class="activity-details">
+                                    <h4>Reunião de Estudos Avançados</h4>
+                                    <p>Estudo aprofundado de obras espíritas e temas relacionados à espiritualidade.</p>
+                                    <div class="activity-info">
+                                        <span><i class="fas fa-map-marker-alt"></i> Sala de Estudos 1</span>
+                                        <span><i class="fas fa-user-graduate"></i> Para alunos avançados</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="agenda-info-section">
+            <div class="container">
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Agendamento</h3>
+                        <p>Para atividades que requerem agendamento prévio, entre em contato por telefone ou e-mail com pelo menos 24 horas de antecedência.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Horários</h3>
+                        <p>Recomendamos chegar com 15 minutos de antecedência para todas as atividades. Em caso de atraso superior a 15 minutos, a entrada pode não ser permitida.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h3>Informações Adicionais</h3>
+                        <p>Todas as atividades são gratuitas. Para algumas atividades, pode ser solicitada a doação voluntária de alimentos não perecíveis para nossas ações sociais.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="img/arcas-img/icon-arcasramatis-scaled.png" alt="Logo Arcas Ramatis">
+                </div>
+                <div class="footer-links">
+                    <h3>Acesso Rápido</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="tratamentos.html">Tratamentos</a></li>
+                        <li><a href="agenda.html">Agenda</a></li>
+                        <li><a href="voce-pode-doar.html">Você pode Doar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i>Rua Luís Góis, 243 - Mirandópolis - São Paulo - SP - 04043-250</p>
+                    <p><i class="fas fa-envelope"></i>contato@arcasramatis.com.br</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 - Associacao Ramatis Caridade, Amor e Sabedoria - Arcas - CNPJ: 19.961.791/0001-44 </p>
+                <p>
+                    Endereço:  Rua Luís Góis, 243 - Mirandópolis - São Paulo - SP - 04043-250
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Script para funcionalidade das guias da agenda
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            function activateTab(day) {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+
+                const targetBtn = document.querySelector(`.tab-btn[data-day="${day}"]`);
+                const targetContent = document.getElementById(day);
+
+                if (targetBtn) targetBtn.classList.add('active');
+                if (targetContent) targetContent.classList.add('active');
+            }
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const day = this.getAttribute('data-day');
+                    activateTab(day);
+                });
+            });
+
+            // Ativar o dia atual por padrão
+            const today = new Date();
+            const dayOfWeek = today.getDay(); // 0 = Domingo, 1 = Segunda, ..., 6 = Sábado
+            const days = ['domingo', 'segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'];
+            const currentDay = days[dayOfWeek];
+            
+            activateTab(currentDay);
+        });
+    </script>
+</body>
+</html>
