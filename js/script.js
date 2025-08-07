@@ -12,12 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
             nav.classList.toggle('active');
             document.body.classList.toggle('menu-open');
 
-            // Altera o ícone do hamburger para X quando ativo
+            // Alterna estado visual do hamburger (classe .active controlada por CSS)
             const hamburger = this.querySelector('.hamburger');
-            if (hamburger.classList.contains('active')) {
-                hamburger.classList.remove('active');
-            } else {
-                hamburger.classList.add('active');
+            if (hamburger) {
+                hamburger.classList.toggle('active');
             }
         });
     }
@@ -27,13 +25,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const trigger = item.querySelector('.dropdown-trigger');
         const dropdown = item.querySelector('.dropdown');
 
-        // Em dispositivos móveis, o primeiro clique abre o dropdown
+        // Em dispositivos móveis, o clique abre/fecha o dropdown
         if (trigger) {
             trigger.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
+                if (window.innerWidth <= 1220) {
                     e.preventDefault();
                     item.classList.toggle('active');
-                    
+
                     // Fechar outros dropdowns abertos
                     dropdownItems.forEach(otherItem => {
                         if (otherItem !== item && otherItem.classList.contains('active')) {
@@ -53,7 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
             nav.classList.remove('active');
             document.body.classList.remove('menu-open');
             const hamburger = menuToggle.querySelector('.hamburger');
-            hamburger.classList.remove('active');
+            if (hamburger) hamburger.classList.remove('active');
+
+            // Fecha também quaisquer dropdowns abertos
+            dropdownItems.forEach(otherItem => otherItem.classList.remove('active'));
         }
     });
 
@@ -84,30 +85,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Estilização do menu hamburger quando ativo
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-        const hamburger = this.querySelector('.hamburger');
-        hamburger.classList.toggle('active');
-    });
-
-    // Adiciona estilos CSS para o hamburger ativo
-    const style = document.createElement('style');
-    style.textContent = `
-        .hamburger.active {
-            background-color: transparent;
-        }
-        
-        .hamburger.active::before {
-            transform: rotate(45deg);
-            top: 0;
-        }
-        
-        .hamburger.active::after {
-            transform: rotate(-45deg);
-            bottom: 0;
-        }
-    `;
-    document.head.appendChild(style);
+    // Removido: duplicidade de toggle e injeção de CSS via JS.
+    // O estado visual do hamburger agora é 100% controlado pelo CSS em css/style.css
     
     // Tabs (para páginas que usam abas, como agenda.html)
     const tabButtons = document.querySelectorAll('.tab-button');
