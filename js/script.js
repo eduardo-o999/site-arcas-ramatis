@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Menu toggle para dispositivos móveis
     const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav');
-    const navList = document.querySelector('.nav-list');
+    const nav = document.querySelector('.menu-principal');
+    const navList = document.querySelector('.menu-list');
     const dropdownItems = document.querySelectorAll('.has-dropdown');
 
     if (menuToggle) {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.classList.toggle('menu-open');
 
             // Alterna estado visual do hamburger (classe .active controlada por CSS)
-            const hamburger = this.querySelector('.hamburger');
+            const hamburger = this.querySelector('.menu-hamburger');
             if (hamburger) {
                 hamburger.classList.toggle('active');
             }
@@ -50,16 +50,16 @@ document.addEventListener('DOMContentLoaded', function() {
             menuToggle.classList.remove('active');
             nav.classList.remove('active');
             document.body.classList.remove('menu-open');
-            const hamburger = menuToggle.querySelector('.hamburger');
+            const hamburger = menuToggle.querySelector('.menu-hamburger');
             if (hamburger) hamburger.classList.remove('active');
 
-            // Fecha também quaisquer dropdowns abertos
+            // Fecha quaisquer dropdowns abertos
             dropdownItems.forEach(otherItem => otherItem.classList.remove('active'));
         }
     });
 
     // Fechar o menu ao clicar em um link (mobile)
-    const navLinks = document.querySelectorAll('.nav-list a');
+    const navLinks = document.querySelectorAll('.menu-list a');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             if (window.innerWidth <= 768 && !this.parentElement.classList.contains('has-dropdown')) {
@@ -67,13 +67,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 nav.classList.remove('active');
                 navList.classList.remove('active');
                 document.body.classList.remove('menu-open');
-                const hamburger = menuToggle.querySelector('.hamburger');
+                const hamburger = menuToggle.querySelector('.menu-hamburger');
                 hamburger.classList.remove('active');
             }
         });
     });
 
-    // Adiciona classe active ao link da página atual
+    // Adiciona classe "active" ao link da página atual
     const currentPage = window.location.pathname.split('/').pop();
     
     navLinks.forEach(link => {
@@ -84,18 +84,15 @@ document.addEventListener('DOMContentLoaded', function() {
             link.classList.add('active');
         }
     });
-
-    // Removido: duplicidade de toggle e injeção de CSS via JS.
-    // O estado visual do hamburger agora é 100% controlado pelo CSS em css/style.css
     
-    // Tabs (para páginas que usam abas, como agenda.html)
+    // Tabs/Abas (para páginas como agenda.html)
     const tabButtons = document.querySelectorAll('.tab-button');
     if (tabButtons.length > 0) {
         tabButtons.forEach(button => {
             button.addEventListener('click', function() {
                 const targetTab = this.getAttribute('data-tab');
                 
-                // Remover classe ativa de todos os botões e conteúdos
+                // Reset/Remove classe ativa de todas as tabs
                 document.querySelectorAll('.tab-button').forEach(btn => {
                     btn.classList.remove('active');
                 });
@@ -103,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     content.classList.remove('active');
                 });
                 
-                // Adicionar classe ativa ao botão e conteúdo clicado
+                // Adiciona classe ativa à tab clicada
                 this.classList.add('active');
                 document.getElementById(targetTab).classList.add('active');
             });
@@ -123,7 +120,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const content = item.querySelector('.accordion-content');
             
             header.addEventListener('click', function() {
-                // Toggle para o item atual
                 item.classList.toggle('active');
             });
         });
@@ -152,23 +148,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Botão de voltar ao topo - IMPLEMENTAR!!
-    const backToTopButton = document.querySelector('.back-to-top');
-    if (backToTopButton) {
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('visible');
-            } else {
-                backToTopButton.classList.remove('visible');
-            }
-        });
+    // const backToTopButton = document.querySelector('.back-to-top');
+    // if (backToTopButton) {
+    //     window.addEventListener('scroll', function() {
+    //         if (window.pageYOffset > 300) {
+    //             backToTopButton.classList.add('visible');
+    //         } else {
+    //             backToTopButton.classList.remove('visible');
+    //         }
+    //     });
 
-        backToTopButton.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
+    //     backToTopButton.addEventListener('click', function() {
+    //         window.scrollTo({
+    //             top: 0,
+    //             behavior: 'smooth'
+    //         });
+    //     });
+    // }
+
 
 
     // const animatedElements = document.querySelectorAll('.animate-on-scroll');
@@ -218,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // fallback trigger
-        const activeLink = document.querySelector('.nav-list a.active');
+        const activeLink = document.querySelector('.menu-list a.active');
         if (activeLink) {
             const parentDropdown = activeLink.closest('.has-dropdown');
             if (parentDropdown) {
