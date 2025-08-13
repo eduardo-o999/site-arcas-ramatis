@@ -459,7 +459,7 @@ p {
 .svg-dropdown {
     transition: rotate 0.3s ease;
 }
-.menu-list span:hover .svg-dropdown, .has-dropdown.active .svg-dropdown {
+.svg-dropdown.active {
     rotate: 180deg;
     transition: rotate 0.3s ease;
 }

@@ -20,17 +20,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Gerenciar dropdowns em dispositivos móveis
+    // Gerenciar dropdowns
     dropdownItems.forEach(item => {
         const trigger = item.querySelector('.dropdown-trigger');
         const dropdown = item.querySelector('.dropdown');
+        const svgd = item.querySelector('.svg-dropdown');
 
+        function toggleSvgdClass() {
+            svgd.classList.toggle('active');
+        }
         // Em dispositivos móveis, o clique abre/fecha o dropdown
         if (trigger) {
             trigger.addEventListener('click', function(e) {
                 if (window.innerWidth <= 1220) {
                     e.preventDefault();
                     item.classList.toggle('active');
+                    toggleSvgdClass();
 
                     // Fechar outros dropdowns abertos
                     dropdownItems.forEach(otherItem => {
@@ -40,8 +45,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 }
             });
-        }
-    });
+        }   
+
+        // Em desktops, mouse por cima do item
+        dropdown.addEventListener('mouseenter', toggleSvgdClass);
+        dropdown.addEventListener('mouseleave', toggleSvgdClass);
+        trigger.addEventListener('mouseenter', toggleSvgdClass);
+        trigger.addEventListener('mouseleave', toggleSvgdClass);
+});
 
     // Fecha o menu ao clicar fora dele
     document.addEventListener('click', function(e) {
@@ -49,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navList.classList.remove('active');
             menuToggle.classList.remove('active');
             nav.classList.remove('active');
+            svgd.classList.remove('active');
             document.body.classList.remove('menu-open');
             const hamburger = menuToggle.querySelector('.menu-hamburger');
             if (hamburger) hamburger.classList.remove('active');
@@ -66,12 +78,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuToggle.classList.remove('active');
                 nav.classList.remove('active');
                 navList.classList.remove('active');
+                svgd.classList.remove('active');
                 document.body.classList.remove('menu-open');
                 const hamburger = menuToggle.querySelector('.menu-hamburger');
                 hamburger.classList.remove('active');
             }
         });
     });
+
+
 
     // Adiciona classe "active" ao link da página atual
     const currentPage = window.location.pathname.split('/').pop();
