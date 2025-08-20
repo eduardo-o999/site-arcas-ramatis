@@ -1,0 +1,40 @@
+import { getRelationFieldInfo } from '../remult3/relationInfoMember.js';
+const sqlExpressionInProgressKey = Symbol.for(`sqlExpressionInProgressKey`);
+export async function fieldDbName(f, meta, wrapIdentifier = (x) => x, forceSqlExpression = false) {
+    try {
+        if (f.options.sqlExpression) {
+            let result;
+            if (typeof f.options.sqlExpression === 'function') {
+                if (f[sqlExpressionInProgressKey] && !forceSqlExpression) {
+                    return "recursive sqlExpression call for field '" + f.key + "'. \0";
+                }
+                try {
+                    ;
+                    f[sqlExpressionInProgressKey] = true;
+                    result = await f.options.sqlExpression(meta);
+                    if (!result.includes('\0'))
+                        f.options.sqlExpression = () => result;
+                }
+                finally {
+                    delete f[sqlExpressionInProgressKey];
+                }
+            }
+            else
+                result = f.options.sqlExpression;
+            if (!result)
+                return f.dbName;
+            return result;
+        }
+        const rel = getRelationFieldInfo(f);
+        let field = rel?.type === 'toOne' &&
+            f.options.field;
+        if (field) {
+            let fInfo = meta.fields.find(field);
+            if (fInfo)
+                return fieldDbName(fInfo, meta, wrapIdentifier, forceSqlExpression);
+        }
+        return wrapIdentifier(f.dbName);
+    }
+    finally {
+    }
+}

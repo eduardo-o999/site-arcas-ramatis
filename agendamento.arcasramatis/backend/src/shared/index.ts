@@ -1,0 +1,1 @@
+// exportar as entidades compartilhadas (?)
