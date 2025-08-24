@@ -1,11 +1,11 @@
 // definição, por typescript, de email e password do usuário aqui uma única vez. Remult fará o resto e evitará repetições.
 import { Entity, Fields, BackendMethod } from 'remult'
 
-@Entity<Usuario>("usuarios", {
+@Entity<User>("usuarios", {
     allowApiCrud: true,
     dbName: 'usuarios'
 })
-export class Usuario {
+export class User {
     @Fields.integer()
     id!: number
 

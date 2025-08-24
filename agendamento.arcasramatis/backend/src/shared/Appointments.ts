@@ -1,11 +1,11 @@
 import { Entity, Fields, BackendMethod } from "remult"
-import { Usuario } from "./Usuario"
+import { User } from "./Users"
 
-@Entity<Agendamento>("agendamentos", {
+@Entity<Appointment>("agendamentos", {
   allowApiCrud: true,
   dbName: 'agendamentos'
 })
-export class Agendamento {
+export class Appointment {
     @Fields.integer()
     id!: number
 
@@ -17,8 +17,6 @@ export class Agendamento {
 
     @Fields.date()
     data_consulta!: Date
-
-    // talvez adicionar linha de "horario_consulta"
 
     @Fields.string()
     status!: string

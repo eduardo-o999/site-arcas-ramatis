@@ -1,30 +1,18 @@
-import express, { Request } from 'express';
-import { remultApi } from  'remult/remult-express';
-import { Usuario } from './shared/Usuario';
-import { Agendamento } from './shared/Agendamento';
+import express from 'express';
+// import { User } from './shared/Users';
+// import { Appointment } from './shared/Appointments';
+import { api } from "./api.ts";
 
 
 // instalar knex e configurar!
 
-    const app = express();
-    const port = 3002;
+const app = express();
+const port = 3000;
 
+app.use(api);
 
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 
-    app.get('/', (req, res) => {
-      res.send('Servidor backend está funcionando.');
-    });
-
-    app.listen(port, () => {
-      console.log(`Servidor rodando na porta ${port}`);
-      console.log(`API disponível em: http://localhost:${port}/api`);
-    });
-  } catch (err) {
-    console.error('Falha ao iniciar o servidor:', err.message);
-    process.exit(1);
-  }
-}
-
-startServer();
-
-
+app.listen(port, () => console.log(`Servidor iniciado em: http://localhost:${port}`));
