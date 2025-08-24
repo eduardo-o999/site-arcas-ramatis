@@ -1,0 +1,3 @@
+import type { EntityMetadata } from "../remult3/remult3.js";
+import type { FieldMetadata } from '../column-interfaces.js';
+export declare function fieldDbName(f: FieldMetadata, meta: EntityMetadata, wrapIdentifier?: (name: string) => string, forceSqlExpression?: boolean): Promise<string>;

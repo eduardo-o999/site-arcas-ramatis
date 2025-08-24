@@ -57,13 +57,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fecha o menu ao clicar fora dele
     document.addEventListener('click', function(e) {
         if (!navList.contains(e.target) && !menuToggle.contains(e.target) && navList.classList.contains('active')) {
+            // Remove classes dos elementos principais
             navList.classList.remove('active');
             menuToggle.classList.remove('active');
             nav.classList.remove('active');
-            svgd.classList.remove('active');
             document.body.classList.remove('menu-open');
+            
+            // Remove classe do hambúrguer
             const hamburger = menuToggle.querySelector('.menu-hamburger');
-            if (hamburger) hamburger.classList.remove('active');
+            if (hamburger) {
+                hamburger.classList.remove('active');
+            }
+
+            // Remove classe dos SVGs dos dropdowns
+            const allSvgDropdowns = document.querySelectorAll('.svg-dropdown');
+            allSvgDropdowns.forEach(svg => svg.classList.remove('active'));
 
             // Fecha quaisquer dropdowns abertos
             dropdownItems.forEach(otherItem => otherItem.classList.remove('active'));
@@ -78,10 +86,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuToggle.classList.remove('active');
                 nav.classList.remove('active');
                 navList.classList.remove('active');
-                svgd.classList.remove('active');
                 document.body.classList.remove('menu-open');
+                
+                // Remove classe do hambúrguer
                 const hamburger = menuToggle.querySelector('.menu-hamburger');
-                hamburger.classList.remove('active');
+                if (hamburger) {
+                    hamburger.classList.remove('active');
+                }
+
+                // Remove classe dos SVGs dos dropdowns
+                const allSvgDropdowns = document.querySelectorAll('.svg-dropdown');
+                allSvgDropdowns.forEach(svg => svg.classList.remove('active'));
             }
         });
     });
