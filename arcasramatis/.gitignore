@@ -57,6 +57,7 @@ node_modules/
 .serverless
 
 # IDE files
+*.code-workspace
 .vscode/
 .idea/
 *.swp
